@@ -1,3 +1,4 @@
+import { useSharedConfig } from "@/hooks/useSharedConfig";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card } from "@/components/ui/card";
@@ -24,13 +25,17 @@ export interface NewsItem {
     category: string;
     location: string;
 }
-const NewsApp = ()=>{
-    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-    const [autoRefresh, setAutoRefresh] = useState(true);
-    const [refreshInterval, setRefreshInterval] = useState(1800);
-    const [daysFilter, setDaysFilter] = useState(3);
-    const [maxNewsCount, setMaxNewsCount] = useState(5);
-    const [useWebScraping, setUseWebScraping] = useState(true);
+const NewsApp = () => {
+    // Usar configuração compartilhada que sincroniza com a página Display
+    const {
+        selectedCategories, setSelectedCategories,
+        autoRefresh, setAutoRefresh,
+        refreshInterval, setRefreshInterval,
+        daysFilter, setDaysFilter,
+        maxNewsCount, setMaxNewsCount,
+        useWebScraping, setUseWebScraping
+    } = useSharedConfig();
+    
     const [dataSource, setDataSource] = useState<'scraping' | 'rss' | 'fallback'>('fallback');
     console.log('NewsApp: Renderizando aplicativo de notícias');
     console.log('NewsApp: Auto-refresh ativo:', autoRefresh);
