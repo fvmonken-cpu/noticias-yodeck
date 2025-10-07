@@ -1,3 +1,4 @@
+import Display from "./pages/Display";
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
@@ -18,6 +19,7 @@ const App = () => (
           <Route path="/specai-page/NotFound" element={<NotFound />} />
 
           <Route path="/" element={<Index data-dora-id="1" />} />
+<Route path="/display" element={<Display />} />
           {/* Place all custom routes above the catch-all "*" route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
