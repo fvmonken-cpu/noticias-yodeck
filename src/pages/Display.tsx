@@ -18,8 +18,11 @@ export default function Display() {
                 padding: 0 !important;
                 width: 100vw !important;
                 height: 100vh !important;
+                min-height: 100vh !important;
+                max-height: 100vh !important;
                 overflow: hidden !important;
                 box-sizing: border-box !important;
+                border: none !important;
             `;
             
             document.body.style.cssText = `
@@ -27,9 +30,28 @@ export default function Display() {
                 padding: 0 !important;
                 width: 100vw !important;
                 height: 100vh !important;
+                min-height: 100vh !important;
+                max-height: 100vh !important;
                 overflow: hidden !important;
                 box-sizing: border-box !important;
+                border: none !important;
             `;
+            
+            // Forçar também no root container do React
+            const rootElement = document.getElementById('root');
+            if (rootElement) {
+                rootElement.style.cssText = `
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    width: 100vw !important;
+                    height: 100vh !important;
+                    min-height: 100vh !important;
+                    max-height: 100vh !important;
+                    overflow: hidden !important;
+                    box-sizing: border-box !important;
+                    border: none !important;
+                `;
+            }
         };
         
         applyStyles();
@@ -43,6 +65,12 @@ export default function Display() {
             document.body.classList.remove('tv-display');
             document.documentElement.style.cssText = '';
             document.body.style.cssText = '';
+            
+            const rootElement = document.getElementById('root');
+            if (rootElement) {
+                rootElement.style.cssText = '';
+            }
+            
             clearTimeout(timeout);
         };
     }, []);
@@ -134,7 +162,7 @@ export default function Display() {
                 backgroundColor: '#000000'
             }}
         >
-            <NewsCarousel news={news} />
+            <NewsCarousel news={news} >
         </div>
     );
 }
