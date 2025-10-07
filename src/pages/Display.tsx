@@ -1,25 +1,46 @@
+import React from "react";
 import NewsCarousel from "@/components/NewsCarousel";
 import { useQuery } from "@tanstack/react-query";
 import { scrapeNewsFromPortals } from "@/services/newsService";
 import { useSharedConfig } from "@/hooks/useSharedConfig";
 
 export default function Display() {
-    // Usar as MESMAS configurações da página principal
+    // Garantir que não há overflow no body para TV Full HD
+    React.useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.body.style.margin = '0';
+        document.body.style.padding = '0';
+        document.documentElement.style.overflow = 'hidden';
+        document.documentElement.style.margin = '0';
+        document.documentElement.style.padding = '0';
+        
+        return () => {
+            // Limpar quando sair da página
+            document.body.style.overflow = '';
+            document.body.style.margin = '';
+            document.body.style.padding = '';
+            document.documentElement.style.overflow = '';
+            document.documentElement.style.margin = '';
+            document.documentElement.style.padding = '';
+        };
+    }, []);
+
+    // Usar as MESMAS configurações da página principal (sincronização via localStorage)
     const { 
         selectedCategories, 
         daysFilter, 
         maxNewsCount, 
-        useWebScraping,
+        useWebScraping, 
         refreshInterval 
     } = useSharedConfig();
     
     console.log("Display: Página Full HD para TV/Yodeck");
-    console.log("Display: Configurações sincronizadas:", { 
-        selectedCategories, 
-        daysFilter, 
-        maxNewsCount, 
+    console.log("Display: Configurações sincronizadas:", {
+        selectedCategories,
+        daysFilter,
+        maxNewsCount,
         useWebScraping,
-        refreshInterval 
+        refreshInterval
     });
     
     // Query usando as configurações compartilhadas
@@ -47,6 +68,7 @@ export default function Display() {
     
     const news = allNews;
 
+    // Estado de carregamento
     if (isLoading) {
         return (
             <div className="min-h-screen bg-black flex items-center justify-center">
@@ -55,6 +77,7 @@ export default function Display() {
         );
     }
 
+    // Estado de erro
     if (error) {
         console.error("Erro ao carregar notícias:", error);
         return (
@@ -64,8 +87,22 @@ export default function Display() {
         );
     }
     
+    // Renderização principal - Full HD (1920x1080) otimizado para TV
     return (
-        <div className="w-screen h-screen overflow-hidden bg-black">
+        <div 
+            className="bg-black" 
+            style={{
+                width: '100vw',
+                height: '100vh',
+                minHeight: '100vh',
+                maxHeight: '100vh',
+                overflow: 'hidden',
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                zIndex: 50
+            }}
+        >
             <NewsCarousel news={news} />
         </div>
     );
