@@ -1,0 +1,166 @@
+{
+  "advanced-settings-section": {
+    "contentMarkdown": "**Configurações Avançadas Section**\n- Configurações Avançadas title\n- Máximo de notícias control\n    - Hash icon\n    - Label text\n    - Value badge\n    - Slider control\n    - Description text\n- Intervalo de atualização control\n    - Clock icon\n    - Label text  \n    - Value badge\n    - Slider control\n    - Description text\n- Dias para buscar control\n    - Calendar icon\n    - Label text\n    - Value badge\n    - Slider control\n    - Description text\n- Sistema Status info\n    - Rotate icon\n    - Status title\n    - Dynamic description with current values",
+    "categoryId": "17582046453732"
+  },
+  "app-root": {
+    "contentMarkdown": "Aplicativo completo de notícias com gradiente azul claro de fundo, otimizado para displays digitais Yodeck\n\n- Theme color: Azul (#3B82F6) como cor primária\n- Font: Sistema padrão (Inter/system-ui)\n- Border radius style: Arredondamentos médios (8px) para cards e botões",
+    "categoryId": "17582046453730"
+  },
+  "carousel-autoplay-toggle": {
+    "contentMarkdown": "**Click Event**\nAlterna entre reprodução automática e manual do carrossel, mudando ícone entre Play/Pause",
+    "categoryId": "17582046453731"
+  },
+  "carousel-main-card": {
+    "contentMarkdown": "Large carousel card with full background image, gradient overlay, and content positioned at bottom with white text on dark background",
+    "categoryId": "17582046453730"
+  },
+  "carousel-mode-button": {
+    "contentMarkdown": "**Click Event** \nMuda o modo de exibição para carrossel de notícias e atualiza estado visual do botão",
+    "categoryId": "17582046453731"
+  },
+  "carousel-qr-section": {
+    "contentMarkdown": "**Seção QR Code no Carrossel**\n- Container com efeito glass/blur\n- QR code maior (100px)\n- Instrução clara para escaneamento\n- Ícone QR code explicativo",
+    "categoryId": "17582046453732"
+  },
+  "category-filter-badge": {
+    "contentMarkdown": "**Click Event**\nToggle de filtro por categoria - adiciona ou remove categoria dos filtros ativos com mudança visual",
+    "categoryId": "17582046453731"
+  },
+  "config-panel": {
+    "contentMarkdown": "**Painel de Configurações**\n- Modo de exibição (Grade/Carrossel)\n- Filtros por categoria\n    - Badges clicáveis para cada categoria\n    - Contador de filtros ativos\n- Configurações de auto-refresh\n    - Toggle on/off\n    - Slider de intervalo\n- Nota de otimização Yodeck",
+    "categoryId": "17582046453732"
+  },
+  "connection-status": {
+    "contentMarkdown": "Display current data source status (scraping/RSS/fallback) with appropriate color coding and connection information",
+    "categoryId": "content"
+  },
+  "data-source-section": {
+    "contentMarkdown": "**Seção Fonte de Dados**\n- Título \"Fonte de Dados\" com ícone RSS\n- Switch RSS Real vs Dados Simulados\n- Badge indicativo do modo atual\n- Descrição explicativa do modo ativo\n- Icons contextuais (RSS/Database)",
+    "categoryId": "17582046453732"
+  },
+  "days-filter-control": {
+    "contentMarkdown": "**Slider Interaction**\nSlider allows user to set maximum days back to search for news (1-7 days) with automatic flexibility expansion if insufficient news found",
+    "categoryId": "17582046453731"
+  },
+  "days-filter-indicator": {
+    "contentMarkdown": "**Indicador de Filtro de Dias**\n- Badge outline com ícone de calendário\n- Texto dinâmico (\"dia\" ou \"dias\")\n- Exibição do período ativo atual",
+    "categoryId": "17582046453732"
+  },
+  "days-filter-section": {
+    "contentMarkdown": "**Seção Filtro de Período**\n- Título \"Período de Notícias\"\n- Slider de 1 a 7 dias\n- Badge indicativo do valor atual\n- Descrição explicativa\n- Labels de range mínimo e máximo",
+    "categoryId": "17582046453732"
+  },
+  "days-filter-slider": {
+    "contentMarkdown": "**Slider Interaction**\nControle deslizante para selecionar período de 1 a 7 dias para filtrar notícias por data de publicação",
+    "categoryId": "17582046453731"
+  },
+  "grid-mode-button": {
+    "contentMarkdown": "**Click Event**\nMuda o modo de exibição para grade de notícias e atualiza estado visual do botão",
+    "categoryId": "17582046453731"
+  },
+  "header-badges": {
+    "contentMarkdown": "**Badges do Cabeçalho**\n- Badge do filtro de dias ativo\n- Badge contador de notícias\n- Layout horizontal com espaçamento",
+    "categoryId": "17582046453732"
+  },
+  "loading-status": {
+    "contentMarkdown": "Blue-themed loading indicator card with spinner icon and informative messages about connection attempts to news portals",
+    "categoryId": "design"
+  },
+  "main-connection-status": {
+    "contentMarkdown": "Shows real-time connection status and switches between different states based on data source availability",
+    "categoryId": "interaction"
+  },
+  "max-news-control": {
+    "contentMarkdown": "**Slider Interaction**\nSlider allows user to select maximum number of news articles (3-15) with real-time value display in badge and dynamic status updates",
+    "categoryId": "17582046453731"
+  },
+  "news-app-container": {
+    "contentMarkdown": "**Aplicativo de Notícias RSS**\n- Header com título e controles\n- Painel de Configuração\n    - Toggle RSS Real/Simulado\n    - Filtros de categoria\n    - Configurações de auto-refresh\n    - Filtro temporal (dias)\n- Painel Debug RSS (quando ativo)\n    - Lista de feeds para teste\n    - Campo URL customizada\n    - Resultados de conectividade\n- Área de Exibição\n    - Grid de notícias\n    - Carrossel de notícias\n    - QR codes para mobile\n- Toast notifications para feedback",
+    "categoryId": "17582046453732"
+  },
+  "news-card": {
+    "contentMarkdown": "News article card with hover effects, image container, category badge, source badge, publication date, title, summary and QR code section - no location display",
+    "categoryId": "17582046453730"
+  },
+  "news-carousel": {
+    "contentMarkdown": "**Carrossel de Notícias**\n- Slide principal em tela cheia\n- Controles de navegação (anterior/próximo)\n- Auto-play com pausa no hover\n- Indicadores de slide\n- Barra de progresso\n- Sobreposição com informações da notícia",
+    "categoryId": "17582046453732"
+  },
+  "news-grid": {
+    "contentMarkdown": "**Grade de Notícias**\n- Cards de notícias em grid responsivo\n- Imagem de destaque\n- Título e resumo\n- Badge de categoria colorido\n- Badge de fonte\n- Timestamp relativo\n- Localização\n- Botão 'Ler mais'",
+    "categoryId": "17582046453732"
+  },
+  "news-header": {
+    "contentMarkdown": "**Cabeçalho da Aplicação**\n- Logo BH News Center\n- Contador de notícias ativas\n- Timestamp da última atualização\n- Botão de refresh manual",
+    "categoryId": "17582046453732"
+  },
+  "news-qr-code": {
+    "contentMarkdown": "**QR Code Generation**\nGera automaticamente QR code para cada notícia permitindo acesso via smartphone",
+    "categoryId": "17582046453731"
+  },
+  "news-rotation-section": {
+    "contentMarkdown": "**Configurações de Exibição**\n- Título da seção\n- Sistema de Rotação Ativo\n    - Máximo de 5 notícias em rotação\n    - Busca novas notícias a cada 30 minutos\n    - Apenas notícias com imagem válida\n    - QR Code aponta para notícia específica",
+    "categoryId": "17582046453732"
+  },
+  "preview-portal-btn": {
+    "contentMarkdown": "**Button Click Interaction**\nFaz preview em tempo real das notícias encontradas no portal específico, mostrando título, fonte, data e URL da imagem.",
+    "categoryId": "17582046453731"
+  },
+  "qr-code-container": {
+    "contentMarkdown": "**QR Code para Notícia**\n- QR code gerado automaticamente\n- Tamanho otimizado para leitura\n- Label \"Escaneie para ler\"\n- Estados de loading e erro",
+    "categoryId": "17582046453732"
+  },
+  "qr-code-section": {
+    "contentMarkdown": "**Seção QR Code na Grade**\n- QR code menor (80px) para economizar espaço\n- Posicionado ao lado das informações\n- Integrado harmoniosamente no layout do card",
+    "categoryId": "17582046453732"
+  },
+  "qr-container-backdrop": {
+    "contentMarkdown": "Container com efeito de vidro fosco no carrossel para destacar o QR code\n\n- Theme color: Fundo branco semi-transparente com blur\n- Font: Texto branco com opacidade para contraste\n- Border radius style: Bordas arredondadas (8px) com borda branca translúcida",
+    "categoryId": "17582046453730"
+  },
+  "read-more-button": {
+    "contentMarkdown": "**Click Event**\nAbre link da notícia original em nova aba do navegador usando window.open",
+    "categoryId": "17582046453731"
+  },
+  "real-rss-toggle": {
+    "contentMarkdown": "**Switch Toggle Interaction**\nAlterna entre modo RSS real e dados simulados. Quando ativado, aparece painel de debug e altera fonte dos dados automaticamente.",
+    "categoryId": "17582046453731"
+  },
+  "refresh-button": {
+    "contentMarkdown": "**Click Event**\nQuando clicado, executa função de atualização manual das notícias e exibe toast de confirmação",
+    "categoryId": "17582046453731"
+  },
+  "refresh-interval-control": {
+    "contentMarkdown": "**Slider Interaction**\nSlider allows user to configure refresh interval (5 minutes to 2 hours) with conversion to minutes display and automatic query refresh triggering",
+    "categoryId": "17582046453731"
+  },
+  "rotation-info": {
+    "contentMarkdown": "Green-themed information card showing active rotation system settings with bullet points describing the news filtering and rotation behavior",
+    "categoryId": "17582046453730"
+  },
+  "rss-debug-panel": {
+    "contentMarkdown": "**Painel Debug RSS**\n- Título com badge \"Desenvolvimento\"\n- Seção Feeds de Teste\n    - Botão \"Testar Todos\"\n    - Grid de feeds individuais\n- Seção URL Customizada\n    - Campo de input\n    - Botão testar\n- Seção Resultados\n    - Lista com status visual\n    - Mensagens de erro/sucesso\n- Nota informativa sobre implementação",
+    "categoryId": "17582046453732"
+  },
+  "scraping-debug-panel": {
+    "contentMarkdown": "**Painel Debug Web Scraping**\n- Título com badge \"Desenvolvimento\"\n- Seção Portais Brasileiros\n    - Lista de portais (G1, UOL, Estado de Minas, O Tempo)\n    - Botão \"Testar Todos\"\n    - Botões individuais de teste e preview\n- Seção Portal Customizado\n    - Campo input para URL\n    - Botão testar\n- Seção Resultados\n    - Lista com status de cada teste\n    - Indicadores visuais (loading, sucesso, erro)\n- Seção Preview\n    - Amostra das notícias extraídas\n    - Título, fonte, data e imagem\n- Nota informativa sobre implementação",
+    "categoryId": "17582046453732"
+  },
+  "test-all-feeds-btn": {
+    "contentMarkdown": "**Button Click Interaction**\nTesta conectividade de todos os feeds RSS simultaneamente, mostrando status em tempo real para cada feed.",
+    "categoryId": "17582046453731"
+  },
+  "test-all-portals-btn": {
+    "contentMarkdown": "**Button Click Interaction**\nTesta conectividade com todos os portais brasileiros configurados (G1, UOL, Estado de Minas, O Tempo) simultaneamente via web scraping.",
+    "categoryId": "17582046453731"
+  },
+  "web-scraping-service": {
+    "contentMarkdown": "**Serviço Web Scraping**\n- Configurações de portais brasileiros\n    - G1, UOL Notícias, Estado de Minas, O Tempo\n    - Seletores CSS específicos para cada portal\n    - Resolvedores de URL para imagens\n- Funções principais\n    - scrapePortal(): extrai notícias de um portal\n    - scrapeAllPortals(): processa todos os portais\n    - testPortalScraping(): testa conectividade\n- Processamento\n    - Parsing HTML com Cheerio\n    - Limpeza de texto automática\n    - Detecção de categoria por palavras-chave\n    - Resolução de URLs relativas",
+    "categoryId": "17582046453732"
+  },
+  "web-scraping-toggle": {
+    "contentMarkdown": "**Toggle Switch Interaction**\nAtiva o modo web scraping que busca notícias diretamente nos portais brasileiros. Desabilita automaticamente o RSS quando ativado e mostra painel de debug específico.",
+    "categoryId": "17582046453731"
+  }
+}
