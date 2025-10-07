@@ -5,27 +5,49 @@ import { scrapeNewsFromPortals } from "@/services/newsService";
 import { useSharedConfig } from "@/hooks/useSharedConfig";
 
 export default function Display() {
-    // Garantir que não há overflow no body para TV Full HD
+    // CSS agressivo para forçar tela completa
     React.useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        document.body.style.margin = '0';
-        document.body.style.padding = '0';
-        document.documentElement.style.overflow = 'hidden';
-        document.documentElement.style.margin = '0';
-        document.documentElement.style.padding = '0';
+        // Adicionar classes para TV display
+        document.documentElement.classList.add('tv-display');
+        document.body.classList.add('tv-display');
+        
+        // Forçar estilos inline como backup
+        const applyStyles = () => {
+            document.documentElement.style.cssText = `
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                overflow: hidden !important;
+                box-sizing: border-box !important;
+            `;
+            
+            document.body.style.cssText = `
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                overflow: hidden !important;
+                box-sizing: border-box !important;
+            `;
+        };
+        
+        applyStyles();
+        
+        // Aplicar novamente após um delay para garantir
+        const timeout = setTimeout(applyStyles, 100);
         
         return () => {
-            // Limpar quando sair da página
-            document.body.style.overflow = '';
-            document.body.style.margin = '';
-            document.body.style.padding = '';
-            document.documentElement.style.overflow = '';
-            document.documentElement.style.margin = '';
-            document.documentElement.style.padding = '';
+            // Limpar classes e estilos
+            document.documentElement.classList.remove('tv-display');
+            document.body.classList.remove('tv-display');
+            document.documentElement.style.cssText = '';
+            document.body.style.cssText = '';
+            clearTimeout(timeout);
         };
     }, []);
 
-    // Usar as MESMAS configurações da página principal (sincronização via localStorage)
+    // Usar as MESMAS configurações da página principal
     const { 
         selectedCategories, 
         daysFilter, 
@@ -61,46 +83,55 @@ export default function Display() {
             
             return filteredNews;
         },
-        refetchInterval: Math.max(refreshInterval * 1000, 60000), // Mín. 1 minuto para TV
-        staleTime: 30 * 1000, // Mais agressivo para TV
+        refetchInterval: Math.max(refreshInterval * 1000, 60000),
+        staleTime: 30 * 1000,
         retry: 3
     });
     
     const news = allNews;
 
-    // Estado de carregamento
     if (isLoading) {
         return (
-            <div className="min-h-screen bg-black flex items-center justify-center">
-                <div className="text-white text-xl">Carregando notícias...</div>
+            <div 
+                className="tv-display-fullscreen"
+                style={{
+                    backgroundColor: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}
+            >
+                <div style={{ color: 'white', fontSize: '24px' }}>
+                    Carregando notícias...
+                </div>
             </div>
         );
     }
 
-    // Estado de erro
     if (error) {
         console.error("Erro ao carregar notícias:", error);
         return (
-            <div className="min-h-screen bg-black flex items-center justify-center">
-                <div className="text-red-500 text-xl">Erro ao carregar notícias</div>
+            <div 
+                className="tv-display-fullscreen"
+                style={{
+                    backgroundColor: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}
+            >
+                <div style={{ color: 'red', fontSize: '24px' }}>
+                    Erro ao carregar notícias
+                </div>
             </div>
         );
     }
     
-    // Renderização principal - Full HD (1920x1080) otimizado para TV
     return (
         <div 
-            className="bg-black" 
+            className="tv-display-fullscreen"
             style={{
-                width: '100vw',
-                height: '100vh',
-                minHeight: '100vh',
-                maxHeight: '100vh',
-                overflow: 'hidden',
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                zIndex: 50
+                backgroundColor: '#000000'
             }}
         >
             <NewsCarousel news={news} />
